@@ -1,0 +1,34 @@
+{
+  "name": "badams/google-url",
+  "type": "library",
+  "description" : "PHP implementation of Googles URL shortener API",
+  "keywords": ["url", "shortener", "short", "google"],
+  "license": "MIT",
+  "homepage" : "https://github.com/badams/google-url",
+  "authors": [
+    {
+      "name": "Byron Adams",
+      "email": "byron.adams54@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/badams/google-url/issues"
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~5.0|~4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.2.0",
+    "fabpot/php-cs-fixer": "^1.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "badams\\GoogleUrl\\": "src/",
+      "badams\\GoogleUrl\\tests\\" : "tests/"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --coverage-text --coverage-html=build;",
+    "php-cs-fixer" : "./vendor/bin/php-cs-fixer fix ."
+  }
+}
