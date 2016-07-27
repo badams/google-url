@@ -7,7 +7,7 @@ GoogleUrl
 ====================
 #### An easy to use PHP implementation of [Google's URL Shortener API](https://developers.google.com/url-shortener/)
 
-The goal of this project is to provide a easy to use implementation of the Google URL shortener API for PHP developers.
+This project aims provide an easy to use implementation of the Google URL shortener API for PHP developers.
 
 
 ## Installation
