@@ -91,7 +91,7 @@ class GoogleUrl
             if (isset($json->error->errors[0])) {
                 $this->assertInvalidKey($json);
                 $this->assertInvalidValue($json);
-            }
+            } // @codeCoverageIgnore
             throw new GoogleUrlException($response->getBody());
         }
 
@@ -120,7 +120,7 @@ class GoogleUrl
         ) {
             throw new InvalidValueException($response->error->errors[0]->location);
         }
-    }
+    } // @codeCoverageIgnore
 
     /**
      * @param $longUrl
