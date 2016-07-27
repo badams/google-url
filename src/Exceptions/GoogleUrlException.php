@@ -12,6 +12,6 @@
 
 namespace badams\GoogleUrl\Exceptions;
 
-class TranslatorException extends \Exception
+class GoogleUrlException extends \Exception
 {
 }

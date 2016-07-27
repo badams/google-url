@@ -12,6 +12,8 @@
 
 namespace badams\GoogleUrl\Actions;
 
+use badams\GoogleUrl\Exceptions\GoogleUrlException;
+
 /**
  * Class Detect
  * @package badams\GoogleUrl\Actions
@@ -31,6 +33,10 @@ class Shorten implements \badams\GoogleUrl\ActionInterface
     public function __construct($longUrl)
     {
         $this->longUrl = $longUrl;
+
+        if (empty($longUrl)) {
+            throw new GoogleUrlException('No URL provided');
+        }
     }
 
     /**
@@ -47,10 +53,10 @@ class Shorten implements \badams\GoogleUrl\ActionInterface
     public function getRequestOptions()
     {
         return [
-            'body' => [
+            'body' => json_encode([
                 'kind' =>'urlshortener#url',
                 'longUrl' => $this->longUrl
-            ]
+            ])
         ];
     }
 
