@@ -15,6 +15,7 @@ namespace badams\GoogleUrl;
 use badams\GoogleUrl\Actions\Shorten;
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
 use badams\GoogleUrl\Exceptions\InvalidKeyException;
+use badams\GoogleUrl\Exceptions\InvalidValueException;
 
 /**
  * Class GoogleUrl
@@ -87,7 +88,10 @@ class GoogleUrl
 
         if ($response->getStatusCode() != 200) {
             $json = json_decode($response->getBody()->getContents());
-            $this->assertInvalidKey($json);
+            if (isset($json->error->errors[0])) {
+                $this->assertInvalidKey($json);
+                $this->assertInvalidValue($json);
+            }
             throw new GoogleUrlException($response->getBody());
         }
 
@@ -100,8 +104,21 @@ class GoogleUrl
      */
     private function assertInvalidKey($response)
     {
-        if (isset($response->error->errors[0]) && $response->error->errors[0]->reason == 'keyInvalid') {
+        if ($response->error->errors[0]->reason == 'keyInvalid') {
             throw new InvalidKeyException;
+        }
+    }
+
+    /**
+     * @param $response
+     */
+    private function assertInvalidValue($response)
+    {
+        if (
+            $response->error->errors[0]->message == 'Invalid Value' &&
+            $response->error->errors[0]->locationType == 'parameter'
+        ) {
+            throw new InvalidValueException($response->error->errors[0]->location);
         }
     }
 
