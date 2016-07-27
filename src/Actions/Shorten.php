@@ -13,6 +13,7 @@
 namespace badams\GoogleUrl\Actions;
 
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
+use badams\GoogleUrl\UrlResource;
 
 /**
  * Class Detect
@@ -22,9 +23,9 @@ use badams\GoogleUrl\Exceptions\GoogleUrlException;
 class Shorten implements \badams\GoogleUrl\ActionInterface
 {
     /**
-     * @var string
+     * @var UrlResource
      */
-    protected $longUrl;
+    protected $resource;
 
     /**
      * Shorten constructor.
@@ -32,11 +33,12 @@ class Shorten implements \badams\GoogleUrl\ActionInterface
      */
     public function __construct($longUrl)
     {
-        $this->longUrl = $longUrl;
-
         if (empty($longUrl)) {
             throw new GoogleUrlException('No URL provided');
         }
+
+        $this->resource = new UrlResource();
+        $this->resource->longUrl = $longUrl;
     }
 
     /**
@@ -53,20 +55,17 @@ class Shorten implements \badams\GoogleUrl\ActionInterface
     public function getRequestOptions()
     {
         return [
-            'body' => json_encode([
-                'kind' =>'urlshortener#url',
-                'longUrl' => $this->longUrl
-            ])
+            'body' => json_encode($this->resource)
         ];
     }
 
     /**
      * @param \GuzzleHttp\Message\ResponseInterface $response
-     * @return string
+     * @return UrlResource
      */
     public function processResponse(\GuzzleHttp\Message\ResponseInterface $response)
     {
         $obj = json_decode($response->getBody()->getContents());
-        return $obj->id;
+        return UrlResource::createFromJson($obj);
     }
 }

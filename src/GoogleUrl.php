@@ -107,7 +107,7 @@ class GoogleUrl
 
     /**
      * @param $longUrl
-     * @return mixed
+     * @return UrlResource
      */
     public function shorten($longUrl)
     {
