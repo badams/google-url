@@ -13,6 +13,8 @@
 namespace badams\GoogleUrl;
 
 use badams\GoogleUrl\Actions\Shorten;
+use badams\GoogleUrl\Exceptions\GoogleUrlException;
+use badams\GoogleUrl\Exceptions\InvalidKeyException;
 
 /**
  * Class GoogleUrl
@@ -36,17 +38,23 @@ class GoogleUrl
     private $key;
 
     /**
-     * MicrosoftTranslator constructor.
+     * GoogleUrl constructor.
+     * @param $key
+     * @param \GuzzleHttp\ClientInterface|null $httpClient
      */
-    public function __construct(\GuzzleHttp\ClientInterface $httpClient = null)
+    public function __construct($key, \GuzzleHttp\ClientInterface $httpClient = null)
     {
         if (is_null($httpClient)) {
             $httpClient = new \GuzzleHttp\Client();
         }
 
+        $this->setKey($key);
         $this->http = $httpClient;
     }
 
+    /**
+     * @param $key
+     */
     public function setKey($key)
     {
         $this->key = $key;
@@ -78,10 +86,23 @@ class GoogleUrl
         $response = $this->http->send($this->createRequest($method));
 
         if ($response->getStatusCode() != 200) {
-            throw new TranslatorException($response->getBody());
+            $json = json_decode($response->getBody()->getContents());
+            $this->assertInvalidKey($json);
+            throw new GoogleUrlException($response->getBody());
         }
 
         return $method->processResponse($response);
+    }
+
+    /**
+     * @param $response
+     * @throws InvalidKeyException
+     */
+    private function assertInvalidKey($response)
+    {
+        if (isset($response->error->errors[0]) && $response->error->errors[0]->reason == 'keyInvalid') {
+            throw new InvalidKeyException;
+        }
     }
 
     /**
