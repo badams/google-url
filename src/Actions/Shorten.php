@@ -14,13 +14,15 @@ namespace badams\GoogleUrl\Actions;
 
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
 use badams\GoogleUrl\UrlResource;
+use badams\GoogleUrl\ActionInterface;
+use GuzzleHttp\Message\ResponseInterface;
 
 /**
  * Class Detect
  * @package badams\GoogleUrl\Actions
  * @link https://developers.google.com/url-shortener/v1/url/insert
  */
-class Shorten implements \badams\GoogleUrl\ActionInterface
+class Shorten implements ActionInterface
 {
     /**
      * @var UrlResource
@@ -60,10 +62,10 @@ class Shorten implements \badams\GoogleUrl\ActionInterface
     }
 
     /**
-     * @param \GuzzleHttp\Message\ResponseInterface $response
+     * @param ResponseInterface $response
      * @return UrlResource
      */
-    public function processResponse(\GuzzleHttp\Message\ResponseInterface $response)
+    public function processResponse(ResponseInterface $response)
     {
         $obj = json_decode($response->getBody()->getContents());
         return UrlResource::createFromJson($obj);

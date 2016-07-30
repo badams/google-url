@@ -16,6 +16,8 @@ use badams\GoogleUrl\Actions\Shorten;
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
 use badams\GoogleUrl\Exceptions\InvalidKeyException;
 use badams\GoogleUrl\Exceptions\InvalidValueException;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Client;
 
 /**
  * Class GoogleUrl
@@ -43,10 +45,10 @@ class GoogleUrl
      * @param $key
      * @param \GuzzleHttp\ClientInterface|null $httpClient
      */
-    public function __construct($key, \GuzzleHttp\ClientInterface $httpClient = null)
+    public function __construct($key, ClientInterface $httpClient = null)
     {
         if (is_null($httpClient)) {
-            $httpClient = new \GuzzleHttp\Client();
+            $httpClient = new Client();
         }
 
         $this->setKey($key);

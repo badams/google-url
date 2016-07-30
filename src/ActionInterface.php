@@ -12,6 +12,8 @@
 
 namespace badams\GoogleUrl;
 
+use GuzzleHttp\Message\ResponseInterface;
+
 /**
  * Interface ActionInterface
  * @package badams\GoogleUrl
@@ -32,5 +34,5 @@ interface ActionInterface
      * @param \GuzzleHttp\Message\ResponseInterface $response
      * @return mixed
      */
-    public function processResponse(\GuzzleHttp\Message\ResponseInterface $response);
+    public function processResponse(ResponseInterface $response);
 }
