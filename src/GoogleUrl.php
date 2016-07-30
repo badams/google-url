@@ -47,7 +47,7 @@ class GoogleUrl
      */
     public function __construct($key, ClientInterface $httpClient = null)
     {
-        if (is_null($httpClient)) {
+        if (null === $httpClient) {
             $httpClient = new Client();
         }
 
