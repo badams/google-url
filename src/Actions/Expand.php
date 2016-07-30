@@ -22,26 +22,26 @@ use GuzzleHttp\Message\ResponseInterface;
  * @package badams\GoogleUrl\Actions
  * @link https://developers.google.com/url-shortener/v1/url/insert
  */
-class Shorten implements ActionInterface
+class Expand implements ActionInterface
 {
     /**
-     * @var UrlResource
+     * @var string
      */
-    protected $resource;
+    protected $shortUrl;
 
     /**
      * Shorten constructor.
-     * @param $longUrl
+     * @param $shortUrl
      * @throws GoogleUrlException
+     * @internal param $longUrl
      */
-    public function __construct($longUrl)
+    public function __construct($shortUrl)
     {
-        if (empty($longUrl)) {
+        if (empty($shortUrl)) {
             throw new GoogleUrlException('No URL provided');
         }
 
-        $this->resource = new UrlResource();
-        $this->resource->longUrl = $longUrl;
+        $this->shortUrl = $shortUrl;
     }
 
     /**
@@ -49,7 +49,7 @@ class Shorten implements ActionInterface
      */
     public function getRequestMethod()
     {
-        return 'POST';
+        return 'GET';
     }
 
     /**
@@ -58,7 +58,7 @@ class Shorten implements ActionInterface
     public function getRequestOptions()
     {
         return [
-            'body' => json_encode($this->resource)
+            'query' => ['shortUrl' => $this->shortUrl]
         ];
     }
 

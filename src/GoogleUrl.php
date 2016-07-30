@@ -12,6 +12,7 @@
 
 namespace badams\GoogleUrl;
 
+use badams\GoogleUrl\Actions\Expand;
 use badams\GoogleUrl\Actions\Shorten;
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
 use badams\GoogleUrl\Exceptions\InvalidKeyException;
@@ -72,7 +73,7 @@ class GoogleUrl
         return $this->http->createRequest(
             $method->getRequestMethod(),
             self::BASE_URL,
-            array_merge([
+            array_merge_recursive([
                 'exceptions' => false,
                 'headers' => ['Content-Type' => 'application/json'],
                 'query' => ['key' => $this->key],
@@ -133,10 +134,24 @@ class GoogleUrl
     /**
      * @param $longUrl
      * @return UrlResource
+     * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
      * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
+     * @throws \badams\GoogleUrl\Exceptions\InvalidKeyException
      */
     public function shorten($longUrl)
     {
         return $this->execute(new Shorten($longUrl));
+    }
+
+    /**
+     * @param $shortUrl
+     * @return UrlResource
+     * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
+     * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
+     * @throws \badams\GoogleUrl\Exceptions\InvalidKeyException
+     */
+    public function expand($shortUrl)
+    {
+        return $this->execute(new Expand($shortUrl));
     }
 }

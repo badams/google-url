@@ -24,9 +24,14 @@ $ composer require badams/google-url
 use badams\GoogleUrl\GoogleUrl;
 
 $url = new GoogleUrl('YOUR_API_KEY_HERE');
-$url->shorten('https://github.com')->id;
-> "https://goo.gl/un5E"
 
+// Shorten
+echo $url->shorten('https://github.com')->id;
+> https://goo.gl/un5E
+
+// Expand
+echo $url->expand($short->id)->longUrl;
+> https://github.com;
 ```
 
 ## License
