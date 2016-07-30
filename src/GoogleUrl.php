@@ -88,9 +88,9 @@ class GoogleUrl
     {
         $response = $this->http->send($this->createRequest($method));
 
-        if ($response->getStatusCode() != 200) {
+        if ($response->getStatusCode() !== 200) {
             $json = json_decode($response->getBody()->getContents());
-            if (isset($json->error->errors[0])) {
+            if (isset($json->error) && is_array($json->error->errors)) {
                 $this->assertInvalidKey($json);
                 $this->assertInvalidValue($json);
             } // @codeCoverageIgnore
@@ -106,7 +106,7 @@ class GoogleUrl
      */
     private function assertInvalidKey($response)
     {
-        if ($response->error->errors[0]->reason == 'keyInvalid') {
+        if ($response->error->errors[0]->reason === 'keyInvalid') {
             throw new InvalidKeyException;
         }
     }
@@ -117,8 +117,8 @@ class GoogleUrl
     private function assertInvalidValue($response)
     {
         if (
-            $response->error->errors[0]->message == 'Invalid Value' &&
-            $response->error->errors[0]->locationType == 'parameter'
+            $response->error->errors[0]->message === 'Invalid Value' &&
+            $response->error->errors[0]->locationType === 'parameter'
         ) {
             throw new InvalidValueException($response->error->errors[0]->location);
         }
