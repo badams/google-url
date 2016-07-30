@@ -83,6 +83,10 @@ class GoogleUrl
     /**
      * @param ActionInterface $method
      * @return mixed
+     * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
+     * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
+     * @throws \badams\GoogleUrl\Exceptions\InvalidKeyException
+     * @throws GoogleUrlException
      */
     private function execute(ActionInterface $method)
     {
@@ -113,6 +117,8 @@ class GoogleUrl
 
     /**
      * @param $response
+     * @throws InvalidValueException
+     * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
      */
     private function assertInvalidValue($response)
     {
@@ -127,6 +133,7 @@ class GoogleUrl
     /**
      * @param $longUrl
      * @return UrlResource
+     * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
      */
     public function shorten($longUrl)
     {

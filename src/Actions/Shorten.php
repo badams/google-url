@@ -32,6 +32,7 @@ class Shorten implements ActionInterface
     /**
      * Shorten constructor.
      * @param $longUrl
+     * @throws GoogleUrlException
      */
     public function __construct($longUrl)
     {
