@@ -17,6 +17,7 @@ use badams\GoogleUrl\Actions\Shorten;
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
 use badams\GoogleUrl\Exceptions\InvalidKeyException;
 use badams\GoogleUrl\Exceptions\InvalidValueException;
+use badams\GoogleUrl\Resources\Url;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Client;
 
@@ -133,7 +134,7 @@ class GoogleUrl
 
     /**
      * @param $longUrl
-     * @return UrlResource
+     * @return Url
      * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
      * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
      * @throws \badams\GoogleUrl\Exceptions\InvalidKeyException
@@ -145,7 +146,7 @@ class GoogleUrl
 
     /**
      * @param $shortUrl
-     * @return UrlResource
+     * @return Url
      * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
      * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
      * @throws \badams\GoogleUrl\Exceptions\InvalidKeyException

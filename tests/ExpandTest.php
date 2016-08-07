@@ -20,7 +20,7 @@ class ExpandTest extends \PHPUnit_Framework_TestCase
         $url = new \badams\GoogleUrl\GoogleUrl($key = '123', $client);
 
         $resource = $url->expand('http://goo.gl/mR2d');
-        $this->assertInstanceOf('\badams\GoogleUrl\UrlResource', $resource);
+        $this->assertInstanceOf('\badams\GoogleUrl\Resources\Url', $resource);
         $this->assertEquals('http://goo.gl/mR2d', $resource->id);
         $this->assertEquals('http://google.com/', $resource->longUrl);
     }

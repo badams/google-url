@@ -13,7 +13,7 @@
 namespace badams\GoogleUrl\Actions;
 
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
-use badams\GoogleUrl\UrlResource;
+use badams\GoogleUrl\Resources\Url;
 use badams\GoogleUrl\ActionInterface;
 use GuzzleHttp\Message\ResponseInterface;
 
@@ -64,11 +64,11 @@ class Expand implements ActionInterface
 
     /**
      * @param ResponseInterface $response
-     * @return UrlResource
+     * @return Url
      */
     public function processResponse(ResponseInterface $response)
     {
         $obj = json_decode($response->getBody()->getContents());
-        return UrlResource::createFromJson($obj);
+        return Url::createFromJson($obj);
     }
 }

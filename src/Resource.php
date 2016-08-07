@@ -13,49 +13,18 @@
 namespace badams\GoogleUrl;
 
 /**
- * Class UrlResource
- * @package badams\GoogleUrl
- * @link https://developers.google.com/url-shortener/v1/url#resource
+ * Class Resource
+ * @package badams\GoogleUrl\Resource
  */
-class UrlResource implements \JsonSerializable
+abstract class Resource implements \JsonSerializable
 {
     /**
-     * @var string
-     */
-    public $kind = 'urlshortener#url';
-
-    /**
-     * Short URL, e.g. "http://goo.gl/l6MS".
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
-     * Long URL, e.g. "http://www.google.com/".
-     * Might not be present if the status is "REMOVED".
-     *
-     * @var string|null
-     */
-    public $longUrl;
-
-    /**
-     * Status of the target URL.
-     *
-     * Possible values: "OK", "MALWARE", "PHISHING", or "REMOVED".
-     * A URL might be marked "REMOVED" if it was flagged as spam, for example.
-     *
-     * @var string
-     */
-    public $status;
-
-    /**
      * @param \stdClass $json
-     * @return UrlResource
+     * @return static
      */
     public static function createFromJson(\stdClass $json)
     {
-        $resource = new UrlResource();
+        $resource = new static;
         $class = new \ReflectionClass($resource);
 
         foreach ($class->getProperties(\ReflectionProperty::IS_PUBLIC) as $property) {
