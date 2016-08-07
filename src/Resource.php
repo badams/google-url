@@ -28,8 +28,9 @@ abstract class Resource implements \JsonSerializable
         $class = new \ReflectionClass($resource);
 
         foreach ($class->getProperties(\ReflectionProperty::IS_PUBLIC) as $property) {
-            if (isset($json->{$property->getName()})) {
-                $resource->{$property->getName()} = $json->{$property->getName()};
+            $name = $property->getName();
+            if (property_exists($json, $name)) {
+                $resource->setProperty($name, $json->$name);
             }
         }
 
@@ -53,5 +54,21 @@ abstract class Resource implements \JsonSerializable
         }
 
         return $json;
+    }
+
+    /**
+     * @param $name
+     * @param $value
+     */
+    public function setProperty($name, $value)
+    {
+        $setter = 'set'.$name;
+
+        if (method_exists($this, $setter)) {
+            call_user_func([$this, $setter], $value);
+            return;
+        }
+
+        $this->$name = $value;
     }
 }

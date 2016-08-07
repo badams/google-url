@@ -28,7 +28,7 @@ use GuzzleHttp\Client;
 class GoogleUrl
 {
     /**
-     *
+     * Base API URL
      */
     const BASE_URL = 'https://www.googleapis.com/urlshortener/v1/url';
 
@@ -146,13 +146,14 @@ class GoogleUrl
 
     /**
      * @param $shortUrl
+     * @param $projection
      * @return Url
      * @throws \badams\GoogleUrl\Exceptions\InvalidValueException
      * @throws \badams\GoogleUrl\Exceptions\GoogleUrlException
      * @throws \badams\GoogleUrl\Exceptions\InvalidKeyException
      */
-    public function expand($shortUrl)
+    public function expand($shortUrl, $projection = null)
     {
-        return $this->execute(new Expand($shortUrl));
+        return $this->execute(new Expand($shortUrl, $projection));
     }
 }

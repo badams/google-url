@@ -58,4 +58,20 @@ class Url extends Resource
      * @var string|null
      */
     public $created;
+
+    /**
+     * A summary of the click analytics for the short and long URL.
+     * Might not be present if not requested or currently unavailable.
+     *
+     * @var Analytics|null
+     */
+    public $analytics;
+
+    /**
+     * @param \stdClass $json
+     */
+    public function setAnalytics($json)
+    {
+        $this->analytics = Analytics::createFromJson($json);
+    }
 }

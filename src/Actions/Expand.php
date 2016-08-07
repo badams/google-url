@@ -13,6 +13,7 @@
 namespace badams\GoogleUrl\Actions;
 
 use badams\GoogleUrl\Exceptions\GoogleUrlException;
+use badams\GoogleUrl\Resources\Analytics;
 use badams\GoogleUrl\Resources\Url;
 use badams\GoogleUrl\ActionInterface;
 use GuzzleHttp\Message\ResponseInterface;
@@ -30,18 +31,28 @@ class Expand implements ActionInterface
     protected $shortUrl;
 
     /**
+     * @var
+     */
+    protected $projection;
+
+    /**
      * Shorten constructor.
      * @param $shortUrl
      * @throws GoogleUrlException
      * @internal param $longUrl
      */
-    public function __construct($shortUrl)
+    public function __construct($shortUrl, $projection = null)
     {
         if (empty($shortUrl)) {
             throw new GoogleUrlException('No URL provided');
         }
 
+        if ($projection && !in_array($projection, [Analytics::FULL, Analytics::CLICKS, Analytics::TOP])) {
+            throw new GoogleUrlException('Invalid Projection Parameter');
+        }
+
         $this->shortUrl = $shortUrl;
+        $this->projection = $projection;
     }
 
     /**
@@ -58,7 +69,10 @@ class Expand implements ActionInterface
     public function getRequestOptions()
     {
         return [
-            'query' => ['shortUrl' => $this->shortUrl]
+            'query' => array_filter([
+                'shortUrl' => $this->shortUrl,
+                'projection' => $this->projection
+            ])
         ];
     }
 

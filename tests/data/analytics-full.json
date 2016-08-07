@@ -1,0 +1,665 @@
+{
+  "kind": "urlshortener#url",
+  "id": "http://goo.gl/mR2d",
+  "longUrl": "http://google.com/",
+  "status": "OK",
+  "created": "2009-12-15T02:27:58.000+00:00",
+  "analytics": {
+    "allTime": {
+      "shortUrlClicks": "929824",
+      "longUrlClicks": "34972779",
+      "referrers": [
+        {
+          "count": "183129",
+          "id": "t.co"
+        },
+        {
+          "count": "92272",
+          "id": "www.youtube.com"
+        },
+        {
+          "count": "57563",
+          "id": "unknown"
+        },
+        {
+          "count": "42510",
+          "id": "adf.ly"
+        },
+        {
+          "count": "23776",
+          "id": "jooker.com"
+        },
+        {
+          "count": "18679",
+          "id": "www.eurekalert.org"
+        },
+        {
+          "count": "18263",
+          "id": "www.cuevana.tv"
+        },
+        {
+          "count": "15380",
+          "id": "ysear.ch"
+        },
+        {
+          "count": "10522",
+          "id": "meknescity.com"
+        },
+        {
+          "count": "10127",
+          "id": "www.google.com.ar"
+        }
+      ],
+      "countries": [
+        {
+          "count": "179258",
+          "id": "KR"
+        },
+        {
+          "count": "167118",
+          "id": "MX"
+        },
+        {
+          "count": "124048",
+          "id": "AR"
+        },
+        {
+          "count": "56743",
+          "id": "CO"
+        },
+        {
+          "count": "49098",
+          "id": "CL"
+        },
+        {
+          "count": "42377",
+          "id": "US"
+        },
+        {
+          "count": "30482",
+          "id": "YE"
+        },
+        {
+          "count": "27349",
+          "id": "VE"
+        },
+        {
+          "count": "14558",
+          "id": "VN"
+        },
+        {
+          "count": "13861",
+          "id": "IN"
+        }
+      ],
+      "browsers": [
+        {
+          "count": "635714",
+          "id": "Chrome"
+        },
+        {
+          "count": "76191",
+          "id": "Mobile Safari"
+        },
+        {
+          "count": "75785",
+          "id": "MSIE"
+        },
+        {
+          "count": "46374",
+          "id": "Firefox"
+        },
+        {
+          "count": "35766",
+          "id": "Safari"
+        },
+        {
+          "count": "31055",
+          "id": "Mobile"
+        },
+        {
+          "count": "6827",
+          "id": "SamsungBrowser"
+        },
+        {
+          "count": "4580",
+          "id": "Opera"
+        },
+        {
+          "count": "3735",
+          "id": "NetFront"
+        },
+        {
+          "count": "2404",
+          "id": "RockMelt"
+        }
+      ],
+      "platforms": [
+        {
+          "count": "633663",
+          "id": "Windows"
+        },
+        {
+          "count": "150243",
+          "id": "Android"
+        },
+        {
+          "count": "53945",
+          "id": "Macintosh"
+        },
+        {
+          "count": "52414",
+          "id": "iPhone"
+        },
+        {
+          "count": "15614",
+          "id": "X11"
+        },
+        {
+          "count": "5597",
+          "id": "iPad"
+        },
+        {
+          "count": "4729",
+          "id": "Samsung"
+        },
+        {
+          "count": "3963",
+          "id": "Linux"
+        },
+        {
+          "count": "2469",
+          "id": "Nokia"
+        },
+        {
+          "count": "967",
+          "id": "BlackBerry"
+        }
+      ]
+    },
+    "month": {
+      "shortUrlClicks": "953",
+      "longUrlClicks": "1660967",
+      "referrers": [
+        {
+          "count": "333",
+          "id": "unknown"
+        },
+        {
+          "count": "310",
+          "id": "192.168.10.1"
+        },
+        {
+          "count": "228",
+          "id": "meknescity.com"
+        },
+        {
+          "count": "21",
+          "id": "m.facebook.com"
+        },
+        {
+          "count": "10",
+          "id": "www.coblos4d.com"
+        },
+        {
+          "count": "10",
+          "id": "www.facebook.com"
+        },
+        {
+          "count": "7",
+          "id": "codepulsar.com"
+        },
+        {
+          "count": "4",
+          "id": "adf.ly"
+        },
+        {
+          "count": "3",
+          "id": "579b88abf419a.beclicka.org"
+        },
+        {
+          "count": "3",
+          "id": "mobilitydigest.com"
+        }
+      ],
+      "countries": [
+        {
+          "count": "334",
+          "id": "ID"
+        },
+        {
+          "count": "67",
+          "id": "AU"
+        },
+        {
+          "count": "60",
+          "id": "US"
+        },
+        {
+          "count": "49",
+          "id": "DZ"
+        },
+        {
+          "count": "44",
+          "id": "MA"
+        },
+        {
+          "count": "32",
+          "id": "IN"
+        },
+        {
+          "count": "24",
+          "id": "FR"
+        },
+        {
+          "count": "17",
+          "id": "EG"
+        },
+        {
+          "count": "17",
+          "id": "IR"
+        },
+        {
+          "count": "15",
+          "id": "CI"
+        }
+      ],
+      "browsers": [
+        {
+          "count": "676",
+          "id": "Chrome"
+        },
+        {
+          "count": "107",
+          "id": "Firefox"
+        },
+        {
+          "count": "51",
+          "id": "Safari"
+        },
+        {
+          "count": "46",
+          "id": "Mobile Safari"
+        },
+        {
+          "count": "20",
+          "id": "SamsungBrowser"
+        },
+        {
+          "count": "13",
+          "id": "Mobile"
+        },
+        {
+          "count": "10",
+          "id": "MSIE"
+        },
+        {
+          "count": "10",
+          "id": "UCBrowser"
+        },
+        {
+          "count": "5",
+          "id": "GSA"
+        },
+        {
+          "count": "4",
+          "id": "coc_coc_browser"
+        }
+      ],
+      "platforms": [
+        {
+          "count": "431",
+          "id": "Android"
+        },
+        {
+          "count": "326",
+          "id": "Windows"
+        },
+        {
+          "count": "88",
+          "id": "Macintosh"
+        },
+        {
+          "count": "40",
+          "id": "iPhone"
+        },
+        {
+          "count": "32",
+          "id": "X11"
+        },
+        {
+          "count": "22",
+          "id": "iPad"
+        },
+        {
+          "count": "5",
+          "id": "Nokia"
+        },
+        {
+          "count": "2",
+          "id": "BlackBerry"
+        },
+        {
+          "count": "2",
+          "id": "iPod touch"
+        },
+        {
+          "count": "1",
+          "id": "Android 6.0.1"
+        }
+      ]
+    },
+    "week": {
+      "shortUrlClicks": "281",
+      "longUrlClicks": "455920",
+      "referrers": [
+        {
+          "count": "115",
+          "id": "192.168.10.1"
+        },
+        {
+          "count": "80",
+          "id": "unknown"
+        },
+        {
+          "count": "68",
+          "id": "meknescity.com"
+        },
+        {
+          "count": "5",
+          "id": "codepulsar.com"
+        },
+        {
+          "count": "3",
+          "id": "m.facebook.com"
+        },
+        {
+          "count": "3",
+          "id": "plus.url.google.com"
+        },
+        {
+          "count": "1",
+          "id": "anonre.com"
+        },
+        {
+          "count": "1",
+          "id": "goo.gl"
+        },
+        {
+          "count": "1",
+          "id": "hayageek.com"
+        },
+        {
+          "count": "1",
+          "id": "mobilitydigest.com"
+        }
+      ],
+      "countries": [
+        {
+          "count": "117",
+          "id": "ID"
+        },
+        {
+          "count": "17",
+          "id": "US"
+        },
+        {
+          "count": "12",
+          "id": "MA"
+        },
+        {
+          "count": "10",
+          "id": "FR"
+        },
+        {
+          "count": "9",
+          "id": "DZ"
+        },
+        {
+          "count": "9",
+          "id": "IR"
+        },
+        {
+          "count": "7",
+          "id": "SA"
+        },
+        {
+          "count": "6",
+          "id": "DE"
+        },
+        {
+          "count": "6",
+          "id": "GB"
+        },
+        {
+          "count": "4",
+          "id": "BR"
+        }
+      ],
+      "browsers": [
+        {
+          "count": "193",
+          "id": "Chrome"
+        },
+        {
+          "count": "33",
+          "id": "Firefox"
+        },
+        {
+          "count": "22",
+          "id": "Safari"
+        },
+        {
+          "count": "9",
+          "id": "Mobile"
+        },
+        {
+          "count": "8",
+          "id": "SamsungBrowser"
+        },
+        {
+          "count": "5",
+          "id": "GSA"
+        },
+        {
+          "count": "3",
+          "id": "MSIE"
+        },
+        {
+          "count": "3",
+          "id": "Mobile Safari"
+        },
+        {
+          "count": "1",
+          "id": "Maxthon"
+        },
+        {
+          "count": "1",
+          "id": "PhantomJS"
+        }
+      ],
+      "platforms": [
+        {
+          "count": "133",
+          "id": "Android"
+        },
+        {
+          "count": "91",
+          "id": "Windows"
+        },
+        {
+          "count": "27",
+          "id": "iPhone"
+        },
+        {
+          "count": "10",
+          "id": "Macintosh"
+        },
+        {
+          "count": "8",
+          "id": "X11"
+        },
+        {
+          "count": "6",
+          "id": "iPad"
+        },
+        {
+          "count": "1",
+          "id": "BB10"
+        },
+        {
+          "count": "1",
+          "id": "BlackBerry"
+        },
+        {
+          "count": "1",
+          "id": "Unknown"
+        },
+        {
+          "count": "1",
+          "id": "iPod touch"
+        }
+      ]
+    },
+    "day": {
+      "shortUrlClicks": "39",
+      "longUrlClicks": "74096",
+      "referrers": [
+        {
+          "count": "15",
+          "id": "unknown"
+        },
+        {
+          "count": "12",
+          "id": "192.168.10.1"
+        },
+        {
+          "count": "4",
+          "id": "meknescity.com"
+        },
+        {
+          "count": "3",
+          "id": "m.facebook.com"
+        },
+        {
+          "count": "3",
+          "id": "plus.url.google.com"
+        },
+        {
+          "count": "1",
+          "id": "anonre.com"
+        },
+        {
+          "count": "1",
+          "id": "shopitstyles.com"
+        }
+      ],
+      "countries": [
+        {
+          "count": "12",
+          "id": "ID"
+        },
+        {
+          "count": "3",
+          "id": "BR"
+        },
+        {
+          "count": "3",
+          "id": "IQ"
+        },
+        {
+          "count": "3",
+          "id": "IR"
+        },
+        {
+          "count": "3",
+          "id": "RO"
+        },
+        {
+          "count": "2",
+          "id": "DE"
+        },
+        {
+          "count": "2",
+          "id": "MA"
+        },
+        {
+          "count": "2",
+          "id": "US"
+        },
+        {
+          "count": "1",
+          "id": "AU"
+        },
+        {
+          "count": "1",
+          "id": "CA"
+        }
+      ],
+      "browsers": [
+        {
+          "count": "27",
+          "id": "Chrome"
+        },
+        {
+          "count": "4",
+          "id": "Firefox"
+        },
+        {
+          "count": "3",
+          "id": "Safari"
+        },
+        {
+          "count": "2",
+          "id": "SamsungBrowser"
+        },
+        {
+          "count": "1",
+          "id": "GSA"
+        },
+        {
+          "count": "1",
+          "id": "Mobile"
+        },
+        {
+          "count": "1",
+          "id": "PhantomJS"
+        }
+      ],
+      "platforms": [
+        {
+          "count": "20",
+          "id": "Android"
+        },
+        {
+          "count": "9",
+          "id": "Windows"
+        },
+        {
+          "count": "3",
+          "id": "iPhone"
+        },
+        {
+          "count": "2",
+          "id": "Macintosh"
+        },
+        {
+          "count": "2",
+          "id": "X11"
+        },
+        {
+          "count": "2",
+          "id": "iPad"
+        },
+        {
+          "count": "1",
+          "id": "Unknown"
+        }
+      ]
+    },
+    "twoHours": {
+      "shortUrlClicks": "0",
+      "longUrlClicks": "3692"
+    }
+  }
+}
